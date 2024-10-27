@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### This project is a decentralized application (DApp) designed for secure and anonymous peer-to-peer (P2P) text-based communication. It runs on the Ganache blockchain testnet and leverages the Remix IDE to generate the contract ABI and Address.
 
-## Getting Started
+# Features
+* End-to-End Security: Messages are transmitted over a decentralized network, ensuring privacy and resistance to censorship.
+* Anonymity: Users communicate without revealing identities, as data is stored on-chain.
+* Blockchain-based Communication: Utilizes the Ganache testnet, allowing for secure message storage and retrieval without a central server.
 
-First, run the development server:
+# Prerequisites
+Before running the project, ensure you have the following installed:
 
+* **Ganache** - for a local Ethereum test blockchain
+* **Node.js** and npm - for dependencies
+* **Remix IDE** - to compile the contract and generate the ABI
+
+# Setup
+* **Clone the Repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/VulcanRaven737/Vanguard.git
+cd Vanguard
+Start Ganache
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Run Ganache to simulate a blockchain locally and copy the RPC server address (e.g., http://127.0.0.1:7545).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+* Deploy Smart Contract
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    * Open Remix IDE.
+    * Compile and deploy the smart contract to Ganache.
+    * Copy the generated ABI and contract address for use in your application.
 
-## Learn More
+* Configure Contract ABI and Address
+    * Update the ABI and contract address in ```lib/contractABI.js``` and  ```lib/contractAddr.js``` respectively:
+    ```javascript
+    export const contractABI = [ /* Paste ABI here */ ];
+    export const contractAddress = "0xYourContractAddress";
+    ```
+* Configure RPC Server 
+    * Update the RPC Server Address in ```lib/rpcAddr.js```
+    ```javascript
+    export const rcpAddr = 'http://127.0.0.1:7545'
+    ```
+* Install Dependencies
+    ```bash
+    npm install
+    ```
+* Run the Application
+    ```bash
+    npm run dev
+    ```
+# Usage
+* Send Messages: Enter a message, which will be encrypted and sent over the blockchain.
+* Receive Messages: All incoming messages will be displayed once confirmed on the blockchain.
 
-To learn more about Next.js, take a look at the following resources:
+# Troubleshooting
+* Contract Not Found: Verify the contract address in contractABI.js matches the address shown in Remix.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### This project is licensed under the MIT License.
 
-## Deploy on Vercel
+#### This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
