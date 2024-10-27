@@ -1,4 +1,4 @@
-### This project is a decentralized application (DApp) designed for secure and anonymous peer-to-peer (P2P) text-based communication. It runs on the Ganache blockchain testnet and leverages the Remix IDE to generate the contract ABI and Address.
+#### This project is a decentralized application (DApp) designed for secure and anonymous peer-to-peer (P2P) text-based communication. It runs on the Ganache blockchain testnet and leverages the Remix IDE to generate the contract ABI and Address.
 
 # Features
 * End-to-End Security: Messages are transmitted over a decentralized network, ensuring privacy and resistance to censorship.
